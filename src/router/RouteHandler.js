@@ -1,14 +1,14 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from '../components/home/Home'
 
 function RouteHandler() {
     return (
-        <Router>
+        <BrowserRouter>
             <Switch>
                 <Route exact path='/' component={Home} />
             </Switch>
-        </Router>
+        </BrowserRouter>
     )
 }
 

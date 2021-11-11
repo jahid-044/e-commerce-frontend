@@ -1,0 +1,60 @@
+import React from 'react'
+import { useHistory } from 'react-router-dom'
+import {RiLogoutCircleLine} from 'react-icons/ri'
+import {AiFillHome} from 'react-icons/ai'
+import Category from './Category'
+
+function Navbar() {
+    const history = useHistory()
+    const auth = true
+    //const role = 'SHOP_OWNER'
+
+    const handleLogout = () => {
+        localStorage.clear()
+        history.push('/')
+    }
+
+    const handleSignIn = () => {
+        history.push('/login')
+    }
+
+    const handleGoToHome = () => {
+        history.push('/')
+    }
+
+    return (
+        <>
+            <nav className="flex flex-row sticky top-0 z-50 justify-between bg-gray-800">
+                <div className="flex flex-row">
+                    <div className="flex items-center text-xl text-yellow-50 mx-4">e-Com App</div>
+                    {!auth && 
+                        <div className="flex items-center h-14 cursor-pointer"
+                        onClick={handleGoToHome}>
+                            <div className="bg-green-300 px-2 mx-4 py-2 rounded-md hover:bg-green-400">
+                                <AiFillHome size={28}/>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                {!auth && <div className="flex items-center h-14 cursor-pointer"
+                onClick={handleLogout}>
+                    <div className="bg-red-400 px-2 mx-4 py-2 rounded-lg hover:bg-red-500">
+                        <RiLogoutCircleLine size={28}/>
+                    </div>
+                </div>
+                }
+                {auth && <div className="flex items-center h-14 cursor-pointer"
+                onClick={handleSignIn}>
+                    <button className="bg-yellow-400 px-5 mx-4 py-2 font-bold rounded-md hover:bg-yellow-500">
+                        Sign In
+                    </button>
+                </div>
+                }
+            </nav>
+            <Category />
+        </>
+    )
+}
+
+export default Navbar

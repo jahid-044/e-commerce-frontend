@@ -14,6 +14,9 @@ function RouteHandler() {
             </Switch>
             <Switch>
                 <Route exact path='/Product' component={Product} />
+                <Switch>
+                <Route exact path='/ProductList' component={ProductList} />
+            </Switch>
             </Switch>
         </Router>
     )

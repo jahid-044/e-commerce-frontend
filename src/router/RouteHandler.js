@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from '../components/home/Home'
-import OwnerSignup from "../components/Signin-Signup/OwnerSignup"
-import Signin from "../components/Signin-Signup/Signin"
+import OwnerSignup from "../components/Signup/OwnerSignup"
+import Signin from "../components/Signin/Signin"
 
 function RouteHandler() {
     return (

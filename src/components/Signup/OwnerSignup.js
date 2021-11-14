@@ -17,7 +17,7 @@ function OwnerSignup() {
         const address = event.target.address.value;
         const tin = event.target.tin.value;
         const password = event.target.password.value;
-        alert("Accoount creation successful.");
+        alert("Accoount created successfully.");
         history.push('./')
         // await signUp({
         //     variables: {
@@ -32,7 +32,7 @@ function OwnerSignup() {
         // }).then(() => history.push('./'))
     }
     return (
-        <div className="bg-gray-50 min-h-screen flex flex-col">
+        <div className="bg-green-50 min-h-screen flex flex-col">
             <div className="container max-w-3xl mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                     <form onSubmit={(event) => submitHandler(event)}>
@@ -81,6 +81,8 @@ function OwnerSignup() {
                                 className="block border border-gray-300 w-full p-3 rounded mb-4"
                                 name="password"
                                 placeholder="Password"
+                                pattern="[A-Za-z0-9]{1,8}"
+                                title="Must not exceed 8 characters. No special characters."
                                 required />
                         </div>
 

@@ -109,11 +109,11 @@ function Signin() {
                         Create an account as a
                     </h1>
                     <div className="flex justify-around items-center">
-                    <Link to="/ownerSignup" className="bg-green-400 hover:bg-green-500 px-6 py-1.5 border border-transparent rounded-md shadow-sm text-white text-sm font-medium">
+                    <Link to="/ownerSignup" className="bg-green-400 hover:bg-green-500 px-4 sm:px-6 py-1.5 border border-transparent rounded-md shadow-sm text-white text-sm font-medium">
                         Shop owner
                     </Link>
                     <p>Or</p>
-                    <Link to="/" className="bg-green-400 hover:bg-green-500 px-8 py-1.5 border border-transparent rounded-md shadow-sm text-white text-sm font-medium">
+                    <Link to="/" className="bg-green-400 hover:bg-green-500 px-6 sm:px-8 py-1.5 border border-transparent rounded-md shadow-sm text-white text-sm font-medium">
                         Customer
                     </Link>
                     </div>

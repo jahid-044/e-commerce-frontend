@@ -1,4 +1,3 @@
-import ProductList from "./ProductList";
 import { AiFillDelete } from "react-icons/ai"
 import { AiFillEdit } from "react-icons/ai"
 export default function Product({ item: { Id, Title, Price, image, Category,Quantity } }) {
@@ -23,37 +22,25 @@ export default function Product({ item: { Id, Title, Price, image, Category,Quan
     // ];
 
     return (
-     
-        
-          
-
-            <div >
-                
-               
-                
-
-                <div className=" mx-5"> 
-                <img src={image} alt="product" ></img>  
-                </div>
-                <div className="  mx-5 p-4   ">
-                <h6 className="text-base  font-extrabold">{Title} </h6>
-                <h6 className="text-base  font-semibold">{Category} </h6>
-                </div>
-                <div className="  mx-5 p-4 justify-between flex flex-row ">
-                    
-                    <h6 className="text-base font-extrabold"> Price:{Price}</h6>
-                    <h6 className="text-base font-extrabold">Quantity:{Quantity} </h6>
-                </div>
-               
-                <div className="  mx-5 p-4 justify-between flex flex-row   ">
-                    <button className="bg-purple-500 transition transform hover:scale-110 px-4 py-2 my-2 mx-1 rounded-lg"> <AiFillDelete size={20} /></button>
-                    <button className="bg-purple-500 transition transform hover:scale-110  px-4 py-2 mx-1 my-2 rounded-lg"> <AiFillEdit size={20} /></button>
-                </div>
+        <div >
+            <div className=" mx-5"> 
+            <img src={image} alt="product" ></img>  
             </div>
-
-           
-    
-        
+            <div className="  mx-5 p-4   ">
+            <h6 className="text-base  font-extrabold">{Title} </h6>
+            <h6 className="text-base  font-semibold">{Category} </h6>
+            </div>
+            <div className="  mx-5 p-4 justify-between flex flex-row ">
+                
+                <h6 className="text-base font-extrabold"> Price:{Price}</h6>
+                <h6 className="text-base font-extrabold">Quantity:{Quantity} </h6>
+            </div>
+            
+            <div className="  mx-5 p-4 justify-between flex flex-row   ">
+                <button className="bg-purple-500 transition transform hover:scale-110 px-4 py-2 my-2 mx-1 rounded-lg"> <AiFillDelete size={20} /></button>
+                <button className="bg-purple-500 transition transform hover:scale-110  px-4 py-2 mx-1 my-2 rounded-lg"> <AiFillEdit size={20} /></button>
+            </div>
+        </div>   
     )
 
 

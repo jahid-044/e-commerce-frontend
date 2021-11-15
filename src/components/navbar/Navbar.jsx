@@ -4,7 +4,7 @@ import {RiLogoutCircleLine} from 'react-icons/ri'
 import {AiFillHome} from 'react-icons/ai'
 import Category from './Category'
 import {FiPlusSquare} from 'react-icons/fi'
-import AddProduct from '../AddProduct'
+import AddProduct from '../products/AddProduct'
 
 function Navbar() {
     const history = useHistory()
@@ -62,7 +62,7 @@ function Navbar() {
             </nav>
             <Category />
 
-            {showModal && <AddProduct onClick={()=> setShowModal(true)} setShowModal={setShowModal}/>}
+            {showModal && <AddProduct onClick={()=> setShowModal(true)} showModal={showModal} setShowModal={setShowModal}/>}
         </>
     )
 }

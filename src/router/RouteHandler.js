@@ -1,9 +1,9 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from '../components/home/Home'
-import AddProduct from '../components/AddProduct'
-import ProductList from "../components/ProductList"
-import Product from "../components/Product"
+import AddProduct from '../components/products/AddProduct'
+import ProductList from "../components/products/ProductList"
+//import Product from "../components/Product"
 
 function RouteHandler() {
     return (

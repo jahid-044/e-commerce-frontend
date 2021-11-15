@@ -4,9 +4,9 @@ function AddProduct({setShowModal}) {
     return (
         <div>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-full my-6 max-w-lg">
+                <div className="relative max-w-lg">
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
-                    <div className="flex items-center justify-center p-5 border-b border-solid border-blueGray-200 rounded-t">
+                    <div className="flex items-center justify-center p-5 border-b border-solid rounded-t">
                         <h3 className="text-xl font-semibold">
                             ADD NEW PRODUCT
                         </h3>
@@ -15,17 +15,18 @@ function AddProduct({setShowModal}) {
                         <form className="w-full max-w-lg">
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full px-3">
-                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="title">
+                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="title">
                                         Title
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" 
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                                    id="title" type="text" 
                                     placeholder="Product title"/>
                                 </div>
                             </div>
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
-                                    for="description">
+                                    htmlFor="description">
                                         Description
                                     </label>
                                     <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
@@ -34,18 +35,31 @@ function AddProduct({setShowModal}) {
                                     placeholder="Product description"/>
                                 </div>
                             </div>
-                            <div className="flex flex-wrap -mx-3">
-                                <div className="w-full px-3">
-                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="price">
-                                        Price
-                                    </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" 
-                                    placeholder="Price in taka"/>
+                            <div className="flex flex-row">
+                                <div className="flex flex-wrap -mx-3 mr-2">
+                                    <div className="w-full px-3">
+                                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="price">
+                                            Price
+                                        </label>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                                        id="price" type="number" 
+                                        placeholder="Price in taka"/>
+                                    </div>
+                                </div>
+                                <div className="flex flex-wrap -mx-3">
+                                    <div className="w-full px-3">
+                                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="quantity">
+                                            Quantity
+                                        </label>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                                        id="quantity" type="number" 
+                                        placeholder="Product quantity"/>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full px-3">
-                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="category">
+                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="category">
                                         Category
                                     </label>
                                     <div className="relative">
@@ -66,7 +80,7 @@ function AddProduct({setShowModal}) {
                         </form>
                     </div>
 
-                    <div className="mx-6">
+                    <div className="mx-6 mb-2">
                         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Image</label>
                         <div className="flex items-center justify-center w-full">
                             <label className="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
@@ -74,14 +88,14 @@ function AddProduct({setShowModal}) {
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         className="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
+                                        <path fillRule="evenodd"
                                             d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                            clip-rule="evenodd" />
+                                            clipRule="evenodd" />
                                     </svg>
                                     <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
                                         Select a photo</p>
                                 </div>
-                                <input type="file" className="opacity-0" />
+                                <input type="file" className="opacity-0" id="image"/>
                             </label>
                         </div>
                     </div>

@@ -65,6 +65,27 @@ function AddProduct({setShowModal}) {
                             </div>
                         </form>
                     </div>
+
+                    <div className="mx-6">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Image</label>
+                        <div className="flex items-center justify-center w-full">
+                            <label className="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                <div className="flex flex-col items-center justify-center pt-7">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        className="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                        Select a photo</p>
+                                </div>
+                                <input type="file" className="opacity-0" />
+                            </label>
+                        </div>
+                    </div>
+
                     <div className="flex items-center justify-end p-4 border-t border-solid border-blueGray-200 rounded-b">
                     <button className="bg-emerald-500 bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-3 mb-1 ease-linear transition-all duration-150"
                         type="button"

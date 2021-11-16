@@ -27,7 +27,7 @@ export default function ProductList(props){
  
         <div className="flex flex-wrap   ">
             
-        { item.map(data=> (<div key={data.Id} className=" w-screen flex justify-around p-2   2xl:w-1/4 xl:w-1/3 md:w-1/2   w-py-2 px-4 lg:px-10 xl:py-4 xl:px-6 ">
+        { item.map((data, index) => (<div key={index} className=" w-screen flex justify-around p-2   2xl:w-1/4 xl:w-1/3 md:w-1/2   w-py-2 px-4 lg:px-10 xl:py-4 xl:px-6 ">
         
        
         <div key={data.Id} className=" bg-purple-50 border-2  flex p-5 rounded-lg m-10 ">

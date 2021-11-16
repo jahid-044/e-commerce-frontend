@@ -1,14 +1,13 @@
 import { useMutation } from '@apollo/client';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useNavigate } from 'react-router';
 import { SIGNUP } from '../../queries/queries';
 
 function OwnerSignup() {
     const history=useHistory();
     const [signUp] = useMutation(SIGNUP);
 
-    async function submitHandler(event) {
+async function submitHandler(event) {
         event.preventDefault();
         const shopName = event.target.shopName.value;
         const ownerName = event.target.ownerName.value;
@@ -17,19 +16,19 @@ function OwnerSignup() {
         const address = event.target.address.value;
         const tin = event.target.tin.value;
         const password = event.target.password.value;
+        await signUp({
+            variables: {
+                email: email,
+                password: password,
+                userRole: "SHOPOWNER",
+                shopName: shopName,
+                ownerName: ownerName,
+                contact: contact,
+                address: address,
+                tinNo: tin
+            }
+        }).then(() => history.push('./'))
         alert("Accoount created successfully.");
-        history.push('./')
-        // await signUp({
-        //     variables: {
-        //         shopName: shopName,
-        //         ownerName: ownerName,
-        //         email: email,
-        //         contact: contact,
-        //         address: address,
-        //         tin: tin,
-        //         password: password
-        //     }
-        // }).then(() => history.push('./'))
     }
     return (
         <div className="bg-green-50 min-h-screen flex flex-col">

@@ -9,6 +9,7 @@ function RouteHandler() {
         <Router>
             <Switch>
                 <Route exact path='/' component={Signin} />
+                <Route exact path='/home' component={Home} />
                 <Route exact path='/ownerSignup' component={OwnerSignup} />
             </Switch>
         </Router>

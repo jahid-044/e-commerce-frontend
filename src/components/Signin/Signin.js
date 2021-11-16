@@ -6,14 +6,14 @@ const LOGIN = gql`
   mutation signin($signInInfo:SignInInput){
     signIn(signInInput:$signInInfo) {
       JWT,
-      username,
-      role
+      email,
+      userRole
     }
   }
 `
 function Signin() {
     const history = useHistory()
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const [input, { data, loading, error }] = useMutation(LOGIN)
@@ -21,8 +21,8 @@ function Signin() {
     if (error) return error.message
     if (data) {
         localStorage.setItem('token', data.signIn.JWT)
-        localStorage.setItem('username', data.signIn.username)
-        localStorage.setItem('role', data.signIn.role)
+        localStorage.setItem('username', data.signIn.email)
+        localStorage.setItem('role', data.signIn.userRole)
     }
 
     async function login(e) {
@@ -30,7 +30,7 @@ function Signin() {
         await input({
             variables: {
                 "signInInfo": {
-                    "username": username,
+                    "email": email,
                     "password": password
                 }
             }
@@ -39,8 +39,8 @@ function Signin() {
         ).catch(err => console.log(err))
     }
 
-    function usernameHandleChange(e) {
-        setUsername(e.target.value)
+    function emailHandleChange(e) {
+        setEmail(e.target.value)
     }
 
     function passwordHandleChange(e) {
@@ -63,17 +63,18 @@ function Signin() {
                         <div className="rounded-md shadow-sm -space-y-px mb-8">
                             <div className="mb-4">
                                 <label
-                                    htmlFor="username"
+                                    htmlFor="email"
                                     className="block text-gray-700 text-base font-medium mb-2"
                                 >
-                                    Username
+                                    Email
                                 </label>
                                 <input
-                                    id="username"
-                                    name="username"
+                                    id="email"
+                                    name="email"
+                                    type="email"
                                     className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                    placeholder="Username"
-                                    onChange={e => usernameHandleChange(e)}
+                                    placeholder="Email"
+                                    onChange={e => emailHandleChange(e)}
                                     required
                                 />
                             </div>

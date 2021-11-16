@@ -4,10 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 import { SIGNUP } from '../../queries/queries';
 
 function OwnerSignup() {
-    const history=useHistory();
-    const [signUp] = useMutation(SIGNUP);
+    const history = useHistory();
+    const [signup] = useMutation(SIGNUP);
 
-async function submitHandler(event) {
+    async function submitHandler(event) {
         event.preventDefault();
         const shopName = event.target.shopName.value;
         const ownerName = event.target.ownerName.value;
@@ -16,7 +16,14 @@ async function submitHandler(event) {
         const address = event.target.address.value;
         const tin = event.target.tin.value;
         const password = event.target.password.value;
-        await signUp({
+        // console.log(typeof(shopName));
+        // console.log(ownerName);
+        // console.log(email);
+        // console.log(contact);
+        // console.log(address);
+        // console.log(shopName);
+        // console.log(shopName);
+        await signup({
             variables: {
                 email: email,
                 password: password,
@@ -27,7 +34,7 @@ async function submitHandler(event) {
                 address: address,
                 tinNo: tin
             }
-        }).then(() => history.push('./'))
+        })
         alert("Accoount created successfully.");
     }
     return (
@@ -104,7 +111,7 @@ async function submitHandler(event) {
 
                 <div className="text-grey-dark mt-6">
                     Already have an account?
-                    <Link to='./'className="no-underline border-b border-blue text-blue ml-1" href="../login/">
+                    <Link to='./' className="no-underline border-b border-blue text-blue ml-1" href="../login/">
                         Sign in
                     </Link>
                 </div>

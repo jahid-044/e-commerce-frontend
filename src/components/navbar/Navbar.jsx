@@ -9,16 +9,18 @@ import AddProduct from '../products/AddProduct'
 function Navbar() {
     const history = useHistory()
     const [showModal, setShowModal] = useState(false)
-    const auth = false
+    const [auth, setAuth] = useState(true)
     //const role = 'SHOP_OWNER'
 
     const handleLogout = () => {
         localStorage.clear()
         history.push('/')
+        setAuth(false)
     }
 
     const handleSignIn = () => {
-        history.push('/login')
+        setAuth(true)
+        history.push('/')
     }
 
     const handleGoToHome = () => {
@@ -40,24 +42,25 @@ function Navbar() {
                     }
                 </div>
 
-                {auth && <div className="flex items-center h-14 cursor-pointer"
-                onClick={handleLogout}>
-                    <div className="bg-red-400 px-2 mx-4 py-2 rounded-lg hover:bg-red-500">
-                        <RiLogoutCircleLine size={28}/>
+                {auth && <div className="flex flex-row items-center">
+                        <div className="mx-2 cursor-pointer" onClick={() => setShowModal(true)}>
+                            <FiPlusSquare size={50} color={"yellow"}/>
+                        </div>
+                        <div className="flex items-center h-14 cursor-pointer"
+                        onClick={handleLogout}>
+                            <div className="bg-red-400 px-2 mx-4 py-2 rounded-lg hover:bg-red-500">
+                                <RiLogoutCircleLine size={28}/>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 }
-                {!auth && <div className="flex flex-row items-center">
-                    <div className="mx-2 cursor-pointer" onClick={() => setShowModal(true)}>
-                        <FiPlusSquare size={50} color={"yellow"}/>
-                    </div>
+                {!auth &&
                     <div className="flex items-center h-14 cursor-pointer"
                     onClick={handleSignIn}>
-                    <button className="bg-yellow-400 px-5 mx-4 py-2 font-bold rounded-md hover:bg-yellow-500">
-                        Sign In
-                    </button>
+                        <button className="bg-yellow-400 px-5 mx-4 py-2 font-bold rounded-md hover:bg-yellow-500">
+                            Sign In
+                        </button>
                     </div>
-                </div>
                 }
             </nav>
             <Category />

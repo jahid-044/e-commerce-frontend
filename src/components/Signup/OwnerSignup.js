@@ -5,8 +5,8 @@ import { SIGNUP } from '../../queries/queries';
 
 function OwnerSignup() {
     const history = useHistory();
-    const [signup] = useMutation(SIGNUP);
-
+    const [signup,{data,loading,error}] = useMutation(SIGNUP);
+    if (error) return error.message;
     async function submitHandler(event) {
         event.preventDefault();
         const shopName = event.target.shopName.value;
@@ -16,26 +16,22 @@ function OwnerSignup() {
         const address = event.target.address.value;
         const tin = event.target.tin.value;
         const password = event.target.password.value;
-        // console.log(typeof(shopName));
-        // console.log(ownerName);
-        // console.log(email);
-        // console.log(contact);
-        // console.log(address);
-        // console.log(shopName);
-        // console.log(shopName);
         await signup({
             variables: {
-                email: email,
-                password: password,
-                userRole: "SHOPOWNER",
-                shopName: shopName,
-                ownerName: ownerName,
-                contact: contact,
-                address: address,
-                tinNo: tin
+                info:{
+                    email: email,
+                    password: password,
+                    userRole: "SHOPOWNER",
+                    shopName: shopName,
+                    ownerName: ownerName,
+                    contact: contact,
+                    address: address,
+                    tinNo: tin
+                }
             }
         })
-        alert("Accoount created successfully.");
+        .then(()=>history.push('/'))
+        alert("Accoount created successfully.")
     }
     return (
         <div className="bg-green-50 min-h-screen flex flex-col">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client"
 import { useHistory, Link } from "react-router-dom";
+import Loading from "../Loading";
 
 const LOGIN = gql`
   mutation signin($signInInfo:SignInInput){
@@ -17,11 +18,11 @@ function Signin() {
     const [password, setPassword] = useState('')
 
     const [input, { data, loading, error }] = useMutation(LOGIN)
-    if (loading) return 'submitting'
+    if (loading) return <Loading/>
     if (error) return error.message
     if (data) {
         localStorage.setItem('token', data.signIn.JWT)
-        localStorage.setItem('username', data.signIn.email)
+        localStorage.setItem('email', data.signIn.email)
         localStorage.setItem('role', data.signIn.userRole)
     }
 

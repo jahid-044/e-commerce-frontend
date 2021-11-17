@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
+import { useMutation } from '@apollo/client';
 import Modal from "@material-tailwind/react/Modal"
 import ModalHeader from "@material-tailwind/react/ModalHeader"
 import ModalBody from "@material-tailwind/react/ModalBody"
+import { UPLOAD } from '../../queries/queries';
 
 function AddProduct({showModal, setShowModal}) {
+    const [uploadFile]=useMutation(UPLOAD);
+
     const [inputs, setInputs] = useState({
         title: '',
         description: '',
@@ -21,6 +25,16 @@ function AddProduct({showModal, setShowModal}) {
             [id]: value,
         })
     }
+    function onChange({ target:{validity,files:[file],value} }) {
+        if(validity.valid){
+        setInputs({...inputs,image:value})
+        uploadFile({
+            variables:{
+                file
+            }
+        })
+        }
+      }
 
     function handleAddProduct(e) {
         e.preventDefault()
@@ -132,7 +146,7 @@ function AddProduct({showModal, setShowModal}) {
                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" 
                                 id="image" type="file" 
                                 placeholder="Upload product image" 
-                                onChange={handleChange}
+                                onChange={onChange}
                                 value={inputs.image}
                                 required/>
                             </div>

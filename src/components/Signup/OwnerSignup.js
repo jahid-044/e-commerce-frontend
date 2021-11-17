@@ -5,8 +5,8 @@ import { SIGNUP } from '../../queries/queries';
 
 function OwnerSignup() {
     const history = useHistory();
-    const [signup,{data,loading,error}] = useMutation(SIGNUP);
-    if (error) return error.message;
+    const [signup] = useMutation(SIGNUP);
+
     async function submitHandler(event) {
         event.preventDefault();
         const shopName = event.target.shopName.value;

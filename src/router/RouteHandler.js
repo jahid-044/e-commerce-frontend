@@ -8,8 +8,8 @@ function RouteHandler() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path='/' component={Signin} />
-                <Route exact path='/home' component={Home} />
+                <Route exact path='/' component={Home} />
+                <Route exact path='/signin' component={Signin} />
                 <Route exact path='/ownerSignup' component={OwnerSignup} />
             </Switch>
         </BrowserRouter>

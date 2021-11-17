@@ -9,18 +9,16 @@ import AddProduct from '../products/AddProduct'
 function Navbar() {
     const history = useHistory()
     const [showModal, setShowModal] = useState(false)
-    const [auth, setAuth] = useState(true)
-    //const role = 'SHOP_OWNER'
+
+    const auth = localStorage.getItem('token')
 
     const handleLogout = () => {
         localStorage.clear()
         history.push('/')
-        setAuth(false)
     }
 
     const handleSignIn = () => {
-        setAuth(true)
-        history.push('/')
+        history.push('/signin')
     }
 
     const handleGoToHome = () => {

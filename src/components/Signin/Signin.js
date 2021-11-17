@@ -35,7 +35,7 @@ function Signin() {
                 }
             }
         }).then(() =>
-            history.push('/home')
+            history.push('/')
         ).catch(err => console.log(err))
     }
 

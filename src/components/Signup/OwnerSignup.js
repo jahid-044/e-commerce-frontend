@@ -93,16 +93,6 @@ function OwnerSignup() {
                             className="max-w-lg flex justify-center mx-auto text-center p-3 rounded bg-green-500 text-black hover:bg-green-700 focus:outline-none my-1"
                         >Create Account</button>
                     </form>
-
-                    <div className="text-center text-sm text-grey-dark mt-4">
-                        By signing up, you agree to the
-                        <a className="no-underline border-b border-grey-dark text-grey-dark ml-1" href="#">
-                            Terms of Service
-                        </a> and
-                        <a className="no-underline border-b border-grey-dark text-grey-dark ml-1" href="#">
-                            Privacy Policy
-                        </a>
-                    </div>
                 </div>
 
                 <div className="text-grey-dark mt-6">

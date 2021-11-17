@@ -3,9 +3,7 @@ import RouteHandler from './router/RouteHandler'
 
 function App() {
   return (
-    <>
       <RouteHandler/>
-    </>
   )
 }
 

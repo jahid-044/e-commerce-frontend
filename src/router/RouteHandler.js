@@ -1,17 +1,16 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from '../components/home/Home'
-import AddProduct from '../components/products/AddProduct'
-import ProductList from "../components/products/ProductList"
-//import Product from "../components/Product"
+import OwnerSignup from "../components/Signup/OwnerSignup"
+import Signin from "../components/Signin/Signin"
 
 function RouteHandler() {
     return (
         <BrowserRouter>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/addProduct' component={AddProduct} />
-                <Route exact path='/ProductList' component={ProductList} />
+                <Route exact path='/signin' component={Signin} />
+                <Route exact path='/ownerSignup' component={OwnerSignup} />
             </Switch>
         </BrowserRouter>
     )

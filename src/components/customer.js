@@ -1,6 +1,7 @@
+
 import React from "react";
 import Product from "./Product";
-export default function customer(props){
+export default function ProductList(props){
 
     const item=[
         { Id:1,   Title:"Shampoo",Quantity:"5", Price:"100tk" , Category:"Cosmetics", image:"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"},

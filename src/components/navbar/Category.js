@@ -9,10 +9,10 @@ function Category() {
 
     return (
         <>
-            <div className="flex flex-row justify-center flex-wrap bg-yellow-100">
+            <div className="flex flex-row justify-center flex-wrap bg-yellow-300">
                 {
                     category.map((c, index) => (
-                        <button key={index} className="text-md m-0.5 mx-4"
+                        <button key={index} className="text-base font-extrabold m-0.5 mx-4"
                         onClick={e => categoryWiseSearch(c)}>{c}</button>
                     ))
                 }
